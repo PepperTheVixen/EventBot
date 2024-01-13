@@ -11,4 +11,5 @@ module.exports = {
       `This server is ${interaction.guild.name} and has ${interaction.guild.memberCount} members.`,
     );
   },
+  guildOnly: true,
 };

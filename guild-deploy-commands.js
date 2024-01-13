@@ -28,24 +28,23 @@ for (const folder of commandFolders) {
 
 const rest = new REST().setToken(token);
 
-// and deploy your commands!
+// deploy commands
 (async () => {
   try {
     console.log(
       `Started refreshing ${commands.length} application (/) commands.`,
     );
 
-    // The put method is used to fully refresh all commands in the guild with the current set
+    // refresh commands in your guild
     const data = await rest.put(
       Routes.applicationGuildCommands(clientId, guildId),
       { body: commands },
     );
 
     console.log(
-      `Successfully reloaded ${data.length} application (/) commands.`,
+      `Successfully reloaded ${data.length} application (/) command.s.`,
     );
   } catch (error) {
-    // And of course, make sure you catch and log any errors!
     console.error(error);
   }
 })();
